@@ -3,10 +3,9 @@ const { signup, login, logout, updateProfile, checkAuth } = require("../controll
 const protectRoute = require("../middleware/protect.route.middleware");
 const router = express.Router();
 
-//users route
 router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
-router.put("/profile-update",protectRoute, updateProfile);
-router.get("/check",protectRoute,checkAuth) //check user is authenticate or not
+router.put("/profile-update", protectRoute, updateProfile);
+router.get("/check", protectRoute, checkAuth); // Added protectRoute middleware
 module.exports = router;
